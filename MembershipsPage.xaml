@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WaterwayBarCodeGenerator.MembershipsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="messageLabel" Text="Choose a membership" Margin="0,10" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            <ListView x:Name="membershipsListView" Margin="20,0" HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding FirstLastName, StringFormat='Name: {0}'}"/>
+                                <Label Grid.Row="1" Text="{Binding MemberLevel, StringFormat='Level: {0}'}"/>
+                                <Label Grid.Column="1" Text="{Binding Number, StringFormat='Membership Number: {0}'}"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding ExpirationDate, StringFormat='Good Thru: {0:MMMM dd, yyyy}'}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="logoutButton" Text="Logout" Margin="5,10" Clicked="OnLogoutButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

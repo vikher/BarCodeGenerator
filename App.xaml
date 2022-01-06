@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WaterwayBarCodeGenerator.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--font families-->
+            <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">HelveticaNeue</On>
+                <On Platform="Android">sans-serif</On>
+            </OnPlatform>
+            <!--font sizes-->
+            <x:Double x:Key="ButtonFontSize">14</x:Double>
+            <!--styles-->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="DodgerBlue"/>
+                <Setter Property="TextColor" Value="WhiteSmoke"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}"/>
+                <Setter Property="FontFamily" Value="{StaticResource ButtonFontSize}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
